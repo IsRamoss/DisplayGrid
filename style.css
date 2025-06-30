@@ -491,9 +491,10 @@ input {
     grid-template-rows: 90px 1fr;
 
     header {
-        display: grid;
+        display: flex;
         align-items: center;
-        grid-template-columns: 4fr 6fr;
+        justify-content: space-between;
+        padding: 0 15%;
 
         h4 {
             font-size: 24px;
@@ -623,7 +624,6 @@ input {
 
 /* ---------------------------------------------------------------------------------------------------- */
 .blog {
-
     height: 100vh;
     margin-left: 90px;
     display: grid;
@@ -701,6 +701,14 @@ input {
 .blogItem {
     position: relative;
 
+    aside {
+        height: 30%;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+    }
+
     img {
         object-fit: cover;
     }
@@ -736,24 +744,25 @@ input {
         }
     }
 
-    .tag {
-        position: absolute;
-        top: 10%;
-        left: 10%;
-        position: absolute;
-        top: 30px;
-        left: 30px;
-        display: inline-block;
-        padding: 4px 20px;
-        margin-bottom: 10px;
-        font-size: 12px;
-        letter-spacing: 2px;
-        color: #2916e0;
-        text-transform: uppercase;
-        font-weight: 600;
-        border-radius: 2px;
-        background: #fff;
-    }
+}
+
+.tag {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    display: inline-block;
+    padding: 4px 20px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #2916e0;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 2px;
+    background: #fff;
 }
 
 /* ---------------------------------------------------------------------------------------------------- */
@@ -804,6 +813,7 @@ input {
 /* ---------------------------------------------------------------------------------------------------- */
 .detailsInfo {
     .Thumb {
+        position: relative;
         margin-bottom: 45px;
     }
 
@@ -885,6 +895,11 @@ input {
                 color: #2916e0;
                 background: #ebebeb;
             }
+
+            .button:hover {
+                background-color: #2916e0;
+                color: #ebebeb;
+            }
         }
     }
 
@@ -941,6 +956,45 @@ input {
             text-align: center;
             font-size: 24px;
             font-weight: 600;
+        }
+    }
+
+    /* --------------------------------- */
+    .Recommended {
+        .RecommendedIMGS {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 250px;
+            gap: 10px;
+            .RecommendedItem{position: relative;
+                aside {
+                    height: 70%;
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+                }
+            div:last-child{position: absolute;bottom: 0;
+                padding: 0 5%;
+            div{font-size: 13px;
+                color: #fff;
+                margin-bottom: 10px;}
+            h3>a{font-size: 20px;
+                    padding-bottom: 25px;
+                    color: #fff;
+                    line-height: 1.6;
+                    font-weight: 600;}                    
+            }}
+        }
+
+        .RecommendedItem:nth-child(1) {
+            background-image: url(blog-details/6Blog.jpg);
+        }
+        .RecommendedItem:nth-child(2) {
+            background-image: url(blog-details/4Blog.jpg);
+        }
+        .RecommendedItem:nth-child(3) {
+            background-image: url(blog-details/3Blog.jpg);
         }
     }
 
